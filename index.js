@@ -27,9 +27,7 @@ async  function run(){
         const data = await cursor.toArray();
         res.send(data)
     })
-    app.get('/hello',(req, res)=>{
-        res.send("hello there!")
-    })
+
     //Get sing data
     app.get('/service/:id', async(req, res)=>{
         const id = req.params.id
@@ -63,6 +61,9 @@ async  function run(){
 }
 run().catch(console.dir)
 
+app.get('/hello',(req, res)=>{
+    res.send("hello there!")
+})
 
 app.get('/', (req, res)=>{
     res.send("Genius car mechanic server")
